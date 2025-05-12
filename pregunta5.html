@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿A quién nunca han visto junto a ti? (Debido a que es tu alter ego)</h1>
+
+        <form id="respuestaForm">
+            <label>
+                <input type="radio" name="respuesta" value="Barbie"> Barbie
+            </label><br>
+            <label>
+                <input type="radio" name="respuesta" value="Rapunzel"> Rapunzel
+            </label><br>
+            <label>
+                <input type="radio" name="respuesta" value="Lisa Simpson"> Lisa Simpson
+            </label><br>
+            <label>
+                <input type="radio" name="respuesta" value="Hello Kitty"> Hello Kitty
+            </label><br>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="mensaje"></div>
+    </div>
+
+    <script>
+        document.getElementById('respuestaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const respuesta = document.querySelector('input[name="respuesta"]:checked')?.value;
+            const mensaje = document.getElementById('mensaje');
+
+            if (respuesta === "Hello Kitty") {
+                window.location.href = 'pregunta6.html'; // Redirige a la siguiente pregunta
+            } else {
+                mensaje.innerHTML = "Respuesta incorrecta. Lo siento, intenta de nuevo.";
+                setTimeout(function() {
+                    window.location.href = 'error6.html'; // Redirige a la página de error
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

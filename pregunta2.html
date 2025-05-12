@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 2 🎤</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Who's Esmeralda's dad?</h1>
+    <form id="formulario2">
+      <div>
+        <input type="radio" id="op1" name="respuesta" value="Luis Miguel">
+        <label for="op1">Luis Miguel</label>
+      </div>
+      <div>
+        <input type="radio" id="op2" name="respuesta" value="Tyler Gregory Okonma">
+        <label for="op2">Tyler Gregory Okonma</label> <!-- CORRECTA -->
+      </div>
+      <div>
+        <input type="radio" id="op3" name="respuesta" value="Cesar Farias">
+        <label for="op3">Cesar Farias</label>
+      </div>
+      <div>
+        <input type="radio" id="op4" name="respuesta" value="Bodoque">
+        <label for="op4">Bodoque</label>
+      </div>
+      <br>
+      <button type="submit" class="button">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('formulario2');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const seleccion = document.querySelector('input[name="respuesta"]:checked');
+      if (!seleccion) return;
+
+      if (seleccion.value === "Tyler Gregory Okonma") {
+        window.location.href = "pregunta3.html";
+      } else {
+        window.location.href = "errores/error2.html";
+      }
+    });
+  </script>
+</body>
+</html>

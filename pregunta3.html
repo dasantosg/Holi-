@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 3 🧠</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>¿De tu test de patología de Pooh, cuál fue tu resultado más fuerte?</h1>
+    <form id="formTexto">
+      <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí..." required>
+      <br><br>
+      <button type="submit" class="button">Enviar</button>
+    </form>
+    <p id="mensaje-error" style="color: crimson; font-weight: bold; margin-top: 20px;"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('formTexto');
+    const input = document.getElementById('respuesta');
+    const mensaje = document.getElementById('mensaje-error');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const valor = input.value.trim().toLowerCase();
+
+      if (valor === "tda") {
+        window.location.href = "pregunta4.html";
+      } else {
+        mensaje.textContent = "El mío fue esquizofrenia, pero no estoy tan loco, sigue intentando :)";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etapa</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .link-box {
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #d8bfd8;
+      color: #333;
+      text-align: center;
+      font-size: 1.1em;
+      max-width: 600px;
+      word-break: break-word;
+    }
+
+    .button {
+      margin: 20px;
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ffb6c1;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ff8da1;
+    }
+
+    .secondary-link {
+      display: block;
+      margin-top: 30px;
+      font-size: 0.95em;
+      color: #555;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Antes de continuar, escucha esto:</h1>
+    <div class="link-box" id="link-container">
+      Cargando enlace...
+    </div>
+
+    <a href="pregunta7.html" class="button">Siguiente</a>
+
+    <a href="pregunta6.html" class="secondary-link">Y por si quieres ver que hay en las demás respuestas...</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const link = params.get('link');
+    const container = document.getElementById('link-container');
+
+    if (link) {
+      container.innerHTML = `<a href="${link}" target="_blank" class="button">Escuchar canción</a>`;
+    } else {
+      container.innerHTML = "No se encontró ningún enlace.";
+    }
+  </script>
+</body>
+</html>

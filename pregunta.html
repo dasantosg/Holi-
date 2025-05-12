@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 1 🎲</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>¿Cuánto es 2 + 2?</h1>
+    <form id="formulario">
+      <div>
+        <input type="radio" id="op1" name="respuesta" value="3">
+        <label for="op1">3</label>
+      </div>
+      <div>
+        <input type="radio" id="op2" name="respuesta" value="1">
+        <label for="op2">1</label>
+      </div>
+      <div>
+        <input type="radio" id="op3" name="respuesta" value="2">
+        <label for="op3">2</label> <!-- CORRECTA -->
+      </div>
+      <div>
+        <input type="radio" id="op4" name="respuesta" value="otra">
+        <label for="op4">Es la anterior cualquier cosa</label>
+      </div>
+      <br>
+      <button type="submit" class="button">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('formulario');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const seleccion = document.querySelector('input[name="respuesta"]:checked');
+      if (!seleccion) return;
+
+      if (seleccion.value === "2") {
+        window.location.href = "pregunta2.html";
+      } else {
+        window.location.href = "error.html";
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 7</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 200px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff8da1;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: #cc3366;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fue esa fecha [DD/MM/AAAA]</h1>
+    <input type="text" id="respuesta" placeholder="DD/MM/AAAA">
+    <br>
+    <button onclick="verificarRespuesta()">Enviar</button>
+    <div id="mensaje" class="message"></div>
+  </div>
+
+  <script>
+    function verificarRespuesta() {
+      const respuesta = document.getElementById("respuesta").value.trim();
+      const mensaje = document.getElementById("mensaje");
+
+      if (respuesta === "28/12/2024") {
+        window.location.href = "carta1.html";
+      } else {
+        mensaje.textContent = "Puedes continuar intentando, pero en realidad si no quieres saber qué hay después de esto, no pasa nada, tal vez te logre sacar una sonrisa con las preguntas pendejas y eso me basta :)";
+      }
+    }
+  </script>
+</body>
+</html>
